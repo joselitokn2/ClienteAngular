@@ -1,0 +1,42 @@
+<div style="margin:10px;">
+    <h3>Añadir Productos</h3>
+    <div [hidden]="submitted" style="width: 400px; ">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required [(ngModel)]="producto.nombre" name="nombre" placeholder="Introductir Nombre" />
+            </div>
+            <div class="form-group">
+                <label for="name">Precio</label>
+                <input type="number" class="form-control" id="precio" required [(ngModel)]="producto.precio" name="precio" placeholder="Introductir Precio" />
+            </div>
+
+            <div class="form-group">
+                <label for="name">Descripcion</label>
+                <input type="text" class="form-control" id="descripcion" required [(ngModel)]="producto.descripcion" name="descripcion" placeholder="Introductir Descripcion" />
+            </div>
+
+            <div class="form-group">
+                <label for="name">Stock</label>
+                <input type="number" class="form-control" id="stock" required [(ngModel)]="producto.stock" name="stock" placeholder="Introductir Stock" />
+            </div>
+            <div class="form-group">
+                <label for="name">Categoria</label>
+                <input type="number" class="form-control" id="categoria" required [(ngModel)]="producto.categoria_id" name="categoria" placeholder="Introductir Categoria" />
+            </div>
+            <!--   <div class="form-group">
+          <label for="categoria">Categoria</label>
+<select class="form-control" id="color" required [(ngModel)]="producto.categoria_id" name="categoria" #categoria="ngModel">
+    <option *ngFor="let categoria of categorias" [value]="color"></option>
+  </select>
+  <div>
+-->
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <h4>Producto Añadido!</h4>
+        <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+    </div>
+</div>

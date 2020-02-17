@@ -1,0 +1,28 @@
+<div style="margin: 10px;">
+    <h2>Producto Details</h2>
+
+    <hr />
+    <div *ngIf="producto">
+        <div>
+            <label><b>nombre: </b></label> {{ producto.nombre }}
+        </div>
+        <div>
+            <label><b>Precio: </b></label> {{ producto.precio }}
+        </div>
+        <div>
+            <label><b>Descripcion: </b></label> {{ producto.descripcion }}
+        </div>
+
+        <div>
+            <label><b>Stock: </b></label> {{ producto.stock }}
+        </div>
+        <div>
+            <label><b>Categoria: </b></label> {{ categoria }}
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <button (click)="list()" class="btn btn-primary">Back to Producto List</button
+  ><br />
+</div>

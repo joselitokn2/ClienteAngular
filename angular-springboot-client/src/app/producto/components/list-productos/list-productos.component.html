@@ -1,0 +1,55 @@
+<div class="prueba">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 style="margin:10px">Listado de Productos</h2>
+        </div>
+
+        <form class="form-inline" style="margin:10px">
+            <div class="md-form">
+                <input type="text" class="form-control" id="nombre" required [(ngModel)]="nombre" name="nombre" />
+                <!-- <input required minlength="3" id="nombre" name="nombre" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">-->
+                <button (click)="buscar(nombre)" class="btn btn-info" style="margin: 10px">
+          Buscar
+        </button>
+            </div>
+        </form>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Categoria</th>
+                        <th>Stock</th>
+                        <th>Precio</th>
+                        <th colspan="3" style="text-align: center;">Operaciones CRUD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of productos">
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>{{ producto.nombreCategoria }}</td>
+                        <td>{{ producto.stock }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>
+                            <button (click)="deleteProducto(producto.producto_id)" class="btn btn-danger" style="margin: 10px">
+                Borrar
+              </button>
+                        </td>
+                        <td>
+                            <button (click)="productoDetails(producto.producto_id)" class="btn btn-info" style="margin: 10px">
+                Detalles
+              </button>
+                        </td>
+                        <td>
+                            <button (click)="productoUpdate(producto.producto_id)" class="btn btn-warning" style="margin: 10px">
+                Modificar
+              </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
